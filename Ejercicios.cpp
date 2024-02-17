@@ -1,6 +1,12 @@
 #include <iostream>
 using namespace std;
 
+/* colaboradores :
+Hennrry Geovanny Canahui Gomez        0909-23-258
+Lester Alexander Esquivel Xepuxtian   0909-23-2662
+
+*/
+
 int main() {
     // Tabla de multiplicar del '4'
     cout << "Tabla de multiplicar del 4" << "\n";
