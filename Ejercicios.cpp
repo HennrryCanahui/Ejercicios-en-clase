@@ -1,77 +1,90 @@
 #include <iostream>
 using namespace std;
-int main(){
 
-    // tabla de multiplicar '4'
-    cout<<"  tabla de multiplicar 4"<<"\n";
-    cout<<"_________________________"<<"\n";
-    for (int i=0; i<=10; i++ ){
-        cout << "4*" << i << "=" << 4*i << "\n";
+int main() {
+    // Tabla de multiplicar del '4'
+    cout << "Tabla de multiplicar del 4" << "\n";
+    for (int i = 0; i <= 10; i++) {
+        cout << "4 * " << i << " = " << 4 * i << "\n";
     }
 
-    // tabla de multiplicar '6'
-    cout<<"  tabla de multiplicar 6"<<"\n";
-    cout<<"_________________________"<<"\n";
-    for (int i=0; i<=10; i++ ){
-        cout << "6*" << i << "=" << 6*i << "\n";
+    // Tabla de multiplicar del '6'
+    cout << "Tabla de multiplicar del 6" << "\n";
+    for (int i = 0; i <= 10; i++) {
+        cout << "6 * " << i << " = " << 6 * i << "\n";
     }
 
-    // Numero factorial
-    int numero_ingresado;
-    cout << "Ingresa un numero: ";
-    cin >> numero_ingresado;
+    // Cálculo del factorial de un número
+    int numero;
+    cout << "Ingresa un numero para calcular su factorial: ";
+    cin >> numero;
     int factorial = 1;
-    for (int i = 1; i <= numero_ingresado; i++) {
+    for (int i = 1; i <= numero; i++) {
         factorial *= i;
     }
-    cout << "El factorial de " << numero_ingresado << " es " << factorial << "\n";
+    cout << "El factorial de " << numero << " es " << factorial << "\n";
 
-    //  numeros fibonacci
-    int n, t1 = 0, t2 = 1, siguienteTermino = 0;
-
-    cout << "Ingresa el número de términos: ";
+    // Generación de la serie Fibonacci
+    int n;
+    cout << "Ingresa el numero de terminos para la serie Fibonacci: ";
     cin >> n;
-
+    int termino1 = 0, termino2 = 1, siguienteTermino = 0;
     cout << "Serie de Fibonacci: ";
-
     for (int i = 1; i <= n; ++i) {
-        if(i == 1) {
-            cout << t1 << ", ";
+        if (i == 1) {
+            cout << termino1 << ", ";
             continue;
         }
-        if(i == 2) {
-            std::cout << t2 << ", ";
+        if (i == 2) {
+            cout << termino2 << ", ";
             continue;
         }
-        siguienteTermino = t1 + t2;
-        t1 = t2;
-        t2 = siguienteTermino;
-
+        siguienteTermino = termino1 + termino2;
+        termino1 = termino2;
+        termino2 = siguienteTermino;
         cout << siguienteTermino << ", ";
     }
 
-    // identificar numero numeros primos
+    // Identificación de números primos
+    int numeroPrimo;
+    bool esPrimo = true;
+    cout << "\nIngrese un numero para verificar si es primo: ";
+    cin >> numeroPrimo;
+    if (numeroPrimo <= 1) {
+        esPrimo = false;
+    } else {
+        for (int i = 2; i * i <= numeroPrimo; ++i) {
+            if (numeroPrimo % i == 0) {
+                esPrimo = false;
+                break;
+            }
+        }
+    }
+    if (esPrimo) {
+        cout << numeroPrimo << " es un numero primo." << endl;
+    } else {
+        cout << numeroPrimo << " no es un numero primo." << endl;
+    }
 
-
-
-    // Identificacion de numeros par
+    // Identificación de números pares
     int numeroPar;
-    cout<<"Ingresa un numero: ";
-    cin>>numeroPar;
-    numeroPar = numeroPar%2;
-    if (numeroPar == 0){
-        cout<<"Es un numero par";
-    }else{
-        cout<<"No es un numero par";
+    cout << "Ingresa un numero para verificar si es par: ";
+    cin >> numeroPar;
+    numeroPar = numeroPar % 2;
+    if (numeroPar == 0) {
+        cout << "Es un numero par." << endl;
+    } else {
+        cout << "No es un numero par." << endl;
     }
 
-
-    // tabla de multiplicar
-    cout<<"  ingresa un numero de la tabla de multiplicar: ";
-    int tabla_multiplicar;
-    cin>> tabla_multiplicar;
-    for (int i=0; i<=10; i++ ){
-        cout <<tabla_multiplicar <<"*" << i << "=" << tabla_multiplicar*i << "\n";
+    // Generación de una tabla de multiplicar personalizada
+    cout << "Ingresa un numero para generar su tabla de multiplicar: ";
+    int tablaMultiplicar;
+    cin >> tablaMultiplicar;
+    cout << "Tabla de multiplicar del " << tablaMultiplicar << ":" << endl;
+    for (int i = 0; i <= 10; i++) {
+        cout << tablaMultiplicar << " * " << i << " = " << tablaMultiplicar * i << "\n";
     }
+
     return 0;
 }
